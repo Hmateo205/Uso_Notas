@@ -63,7 +63,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Paginas\" />
+	  <MauiXaml Update="Paginas\Datos_Nota.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Paginas\Info_Nota.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Paginas\Pagina_Nota.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Uso_Notas.Modelo
 {
-    internal class About
+    internal class Info
     {
     }
 }
