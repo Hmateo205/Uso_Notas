@@ -2,23 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Uso_Notas.Paginas.Info_Nota"
-             Title="Info_Nota">
-    
-    <VerticalStackLayout Spacing="10" Margin="5">
-        <Editor x:Name="TextEditor"
-            Placeholder="Enter your note"
-            Text="{Binding Text}"
-            HeightRequest="100" />
+             Title="Info_Nota"
+             xmlns:models="clr-namespace:Uso_Notas.Modelo"
+             Background="DarkOliveGreen">
 
-        <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
-            <Button Text="Save"
-                Clicked="SaveButton_Clicked" />
+    <ContentPage.BindingContext>
+        <models:About />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="10" Margin="10">
+        <HorizontalStackLayout Spacing="10">
+            <Image Source="dotnet_bot.png"
+                SemanticProperties.Description="The dot net bot waving hello!"
+                HeightRequest="64" />
+            <Label FontSize="50" FontAttributes="None" Text="Hernan Jurado" VerticalOptions="End" />
 
-            <Button Grid.Column="1"
-                Text="Delete"
-                Clicked="DeleteButton_Clicked" />
-        </Grid>
+        </HorizontalStackLayout>
+        <Label FontSize="20" Text="Hola! Mi nombre es Hernan Jurado y soy el creador de esta aplicacion de notas. Espero te Guste!" VerticalOptions="End" />
+
     </VerticalStackLayout>
-
 
 </ContentPage>
