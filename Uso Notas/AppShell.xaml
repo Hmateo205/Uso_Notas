@@ -5,11 +5,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Uso_Notas"
     Shell.FlyoutBehavior="Disabled"
-    Title="Uso_Notas">
+    Title="Uso_Notas"
+    xmlns:views="clr-namespace:Uso_Notas.Paginas">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="Notas"
+            ContentTemplate="{DataTemplate Paginas:Pagina_Nota}"
+            Icon="{OnPlatform 'Nota.png'}" />
+
+        <ShellContent
+            Title="Info"
+            ContentTemplate="{DataTemplate Paginas:Info_Nota}"
+            Icon="{OnPlatform 'Info.png'}" />
+    </TabBar>
 
 </Shell>
