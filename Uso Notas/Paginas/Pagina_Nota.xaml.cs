@@ -7,7 +7,6 @@ public partial class Pagina_Nota : ContentPage
 		InitializeComponent();
         BindingContext = new Modelo.Datos();
     }
-
     protected override void OnAppearing()
     {
         ((Modelo.Datos)BindingContext).LoadNotes();
@@ -15,7 +14,7 @@ public partial class Pagina_Nota : ContentPage
 
     private async void Add_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(Pagina_Nota));
+        await Shell.Current.GoToAsync(nameof(Datos_Nota));
     }
 
     private async void notesCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -26,7 +25,7 @@ public partial class Pagina_Nota : ContentPage
             var note = (Modelo.Nota)e.CurrentSelection[0];
 
             // Should navigate to "NotePage?ItemId=path\on\device\XYZ.notes.txt"
-            await Shell.Current.GoToAsync($"{nameof(Pagina_Nota)}?{nameof(Pagina_Nota.ItemId)}={note.Filename}");
+            await Shell.Current.GoToAsync($"{nameof(Datos_Nota)}?{nameof(Datos_Nota.ItemId)}={note.Filename}");
 
             // Unselect the UI
             notesCollection.SelectedItem = null;
